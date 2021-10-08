@@ -1,0 +1,43 @@
+class Pessoa:
+ def __init__(self, nome, telefone, cpf):
+   self.nome = nome
+   self.telefone = telefone
+   self.cpf = cpf
+
+ def imprimir(self):
+        print("Nome:\t\t", self.nome)
+        print("Telefone:\t", self.telefone)
+        print("CPF:\t\t", self.cpf) 
+
+pessoinha1 = Pessoa('Hermenegildo', '98765-4321', '123.456.789-10')
+pessoinha2 = Pessoa('Zoroastra','87654-3210', '109.876.543-21')
+
+class Pet:
+ def __init__(self, nome, especie, idade):
+   self.nome = nome
+   self.especie = especie
+   self.idade = idade
+   self.responsavel = None
+
+ def imprimir(self):
+        print("Dados do Pet")
+        print("Nome:\t\t", self.nome)
+        print("Especie:\t", self.especie)
+        print("Idade:\t\t", self.idade)
+        print("Dados do Responsavel")
+        self.responsavel.imprimir()
+
+gatito = Pet('Mingau', 'Gato', 5)
+doguinho = Pet('Tobi', 'Cão', 8)
+cobrina = Pet('Paiton', 'Cobra', 3)
+roezito = Pet('Hamtaro', 'Hamster', 2)
+
+gatito.responsavel = pessoinha1
+doguinho.responsavel= pessoinha2
+cobrina.responsavel= pessoinha1
+roezito.responsavel= pessoinha2
+
+lista_pets = [gatito, doguinho, cobrina, roezito]
+for pet in lista_pets:
+    pet.imprimir()
+    print('------------------')
